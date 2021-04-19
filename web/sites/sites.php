@@ -55,5 +55,5 @@
  * @see \Drupal\Core\DrupalKernel::getSitePath()
  * @see https://www.drupal.org/documentation/install/multi-site
  */
-$sites['dodsh01.centerstart.localhost'] = 'dodsh01';
+$sites['dodsh01.centerstart.localhost'] = 'dodsh01.centerstart.ru';
 $sites['dodsh02.centerstart.localhost'] = 'dodsh02';
