@@ -28,6 +28,7 @@ module:
   contact: 0
   content_moderation: 0
   contextual: 0
+  cookie: 0
   ctools: 0
   ctools_block: 0
   ctools_views: 0
@@ -48,6 +49,8 @@ module:
   flexslider: 0
   flexslider_fields: 0
   flexslider_views: 0
+  fz152: 0
+  fz152_contact: 0
   help: 0
   history: 0
   image: 0
@@ -85,6 +88,7 @@ module:
   search_api_db: 0
   serialization: 0
   shortcut: 0
+  sitemap: 0
   slick: 0
   slick_ui: 0
   slick_views: 0
@@ -103,9 +107,11 @@ module:
   token: 0
   toolbar: 0
   tour: 0
+  update: 0
   user: 0
   views_infinite_scroll: 0
   views_ui: 0
+  visually_impaired: 0
   workflows: 0
   pathauto: 1
   views: 10

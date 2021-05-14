@@ -1,7 +1,7 @@
 $ = jQuery.noConflict();
 // инициализируем анамацию появления блоков
 // https://wowjs.uk/docs.html
-new WOW().init();
+//new WOW().init();
 //https://animate.style/  - эффекты
 
 
@@ -12,6 +12,12 @@ $(window).scroll(function () {
      } else {
          $('.button-up').fadeOut();
      }
+  
+     if ($(this).scrollTop() > 50) {
+      $('.button-up').fadeIn();
+  } else {
+      $('.button-up').fadeOut();
+  }
  });
  /** При нажатии на кнопку мы перемещаемся к началу страницы */
  $('.button-up').click(function () {
@@ -21,17 +27,28 @@ $(window).scroll(function () {
      return false;
  });
 
+
 /*  всплывающее модальное окно Login */
+$('#modal_login').modal();
 
 /* позволяет корректно обрабатывать все поведения что могут быть вызваны Drupal API на фронте
 Например если разметка слайдера приедет через AJAX, бихейворы это поймают, а обычный JS нет */
-(function ($) {
+/* (function ($) {
  Drupal.behaviors.modalLogin = {
   attach: function (context, settings) {
     $('#modal_login', context).once('modal-login').modal();
   }
  };
-})(jQuery);
+})(jQuery); */
+
+
+
+
+
+
+
+
+
 
 /*  https://drupal.ru/docs/videouroki/drupalbookru/88-rabota-s-javascriptjquery-v-drupal-8-chto-takoe-behaviors  */ 
 /* https://druki.ru/wiki/drupal-once   c 9.2.0 */
@@ -84,10 +101,12 @@ $(window).scroll(function () {
       // при клике удаляет placeholder
       Drupal.behaviors.hidePlaceholder = {
        attach: function (context, settings) {
-         $('input, texterea', context).once('hide-placeholder').each(function(){
+         $('input, texterea:not(.hide-placeholder__processed)', context).each(function(){
           
           var _this = $(this);
-          $(this).on("click", function(){
+           $(this).on("click", function () {
+            $(this).addClass('hide-placeholder__processed');
+             
             var __this = $(this);
             var placeholder = __this.attr('placeholder');
             __this.attr('placeholder', "");
@@ -130,6 +149,12 @@ $(window).scroll(function () {
 //  };
 //
 //})(Drupal);
+
+// добавляет стили для страницы sitemap
+if ($('.sitemap').length) {
+  $('.sitemap .main-menu').addClass('sitemap-menu');
+  $('.sitemap .main-menu').removeClass('main-menu');
+}
 
 
 

@@ -5,10 +5,131 @@ body {
   font-style: normal;
 }
 
+.form-item,
+.form-actions {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.form-required:after {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 0.3em;
+  content: "";
+  vertical-align: super;
+  /* Use a background image to prevent screen readers from announcing the text. */
+  background-image: url(../images/icons/system/required.svg);
+  background-repeat: no-repeat;
+  background-size: 6px 6px;
+}
+
+/* Inline error messages. */
+.form-item--error-message:before {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  content: "";
+  vertical-align: sub;
+  background: url(../images/icons/system/error.svg) no-repeat;
+  background-size: contain;
+}
+
+/**
+ * @file
+ * Styles for system messages.
+ */
+.messages {
+  padding: 15px 20px 15px 35px;
+  /* LTR */
+  word-wrap: break-word;
+  border: 1px solid;
+  border-width: 1px 1px 1px 0;
+  /* LTR */
+  border-radius: 2px;
+  background: no-repeat 10px 17px;
+  /* LTR */
+  overflow-wrap: break-word;
+}
+
+[dir="rtl"] .messages {
+  padding-right: 35px;
+  padding-left: 20px;
+  text-align: right;
+  border-width: 1px 0 1px 1px;
+  background-position: right 10px top 17px;
+}
+
+.messages + .messages {
+  margin-top: 1.538em;
+}
+
+.messages__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.messages__item + .messages__item {
+  margin-top: 0.769em;
+}
+
+/* See .color-success in Seven's colors.css */
+.messages--status {
+  color: #325e1c;
+  border-color: #c9e1bd #c9e1bd #c9e1bd transparent;
+  /* LTR */
+  background-color: #f3faef;
+  background-image: url(../images/icons/system/check.svg);
+  box-shadow: -8px 0 0 #77b259;
+  /* LTR */
+}
+
+[dir="rtl"] .messages--status {
+  margin-left: 0;
+  border-color: #c9e1bd transparent #c9e1bd #c9e1bd;
+  box-shadow: 8px 0 0 #77b259;
+}
+
+/* See .color-warning in Seven's colors.css */
+.messages--warning {
+  color: #734c00;
+  border-color: #f4daa6 #f4daa6 #f4daa6 transparent;
+  /* LTR */
+  background-color: #fdf8ed;
+  background-image: url(../images/icons/system/warning.svg);
+  box-shadow: -8px 0 0 #e09600;
+  /* LTR */
+}
+
+[dir="rtl"] .messages--warning {
+  border-color: #f4daa6 transparent #f4daa6 #f4daa6;
+  box-shadow: 8px 0 0 #e09600;
+}
+
+/* See .color-error in Seven's colors.css */
+.messages--error {
+  color: #a51b00;
+  border-color: #f9c9bf #f9c9bf #f9c9bf transparent;
+  /* LTR */
+  background-color: #fcf4f2;
+  background-image: url(../images/icons/system/error.svg);
+  box-shadow: -8px 0 0 #e62600;
+  /* LTR */
+}
+
+[dir="rtl"] .messages--error {
+  border-color: #f9c9bf transparent #f9c9bf #f9c9bf;
+  box-shadow: 8px 0 0 #e62600;
+}
+
+.messages--error p.error {
+  color: #a51b00;
+}
+
 /* Global */
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   min-height: 100vh;
 }
 
@@ -30,8 +151,7 @@ body {
 }
 
 *, *:before, *:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -47,7 +167,6 @@ a {
   text-decoration: none;
   color: #569797;
   display: inline-block;
-  -webkit-transition: all .2s;
   transition: all .2s;
 }
 
@@ -145,11 +264,9 @@ img {
   color: #fff !important;
   text-align: center;
   background-color: #569797;
-  -webkit-transition: all .2s;
   transition: all .2s;
   color: #fff !important;
-  -webkit-box-shadow: 1px 3px 4px rgba(59, 59, 59, 0.45);
-          box-shadow: 1px 3px 4px rgba(59, 59, 59, 0.45);
+  box-shadow: 1px 3px 4px rgba(59, 59, 59, 0.45);
 }
 
 .link-more a:first-letter {
@@ -157,13 +274,11 @@ img {
 }
 
 .link-more a:hover {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .link-more a:active {
-  -webkit-box-shadow: inset 0px 5px 4px rgba(59, 59, 59, 0.3);
-          box-shadow: inset 0px 5px 4px rgba(59, 59, 59, 0.3);
+  box-shadow: inset 0px 5px 4px rgba(59, 59, 59, 0.3);
 }
 
 .page-title {
@@ -206,10 +321,8 @@ img {
   border-radius: 25px;
   background-color: #1565c0;
   color: #fff;
-  -webkit-transition: all .2s;
   transition: all .2s;
-  -webkit-box-shadow: 1px 3px 4px rgba(59, 59, 59, 0.45);
-          box-shadow: 1px 3px 4px rgba(59, 59, 59, 0.45);
+  box-shadow: 1px 3px 4px rgba(59, 59, 59, 0.45);
 }
 
 @media (max-width: 425px) {
@@ -220,13 +333,11 @@ img {
 }
 
 .views-field-edit-node a:hover {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .views-field-edit-node a:active {
-  -webkit-box-shadow: inset 0px 5px 4px rgba(59, 59, 59, 0.3);
-          box-shadow: inset 0px 5px 4px rgba(59, 59, 59, 0.3);
+  box-shadow: inset 0px 5px 4px rgba(59, 59, 59, 0.3);
 }
 
 .toolbar-icon-9 .views-field-edit-node a {
