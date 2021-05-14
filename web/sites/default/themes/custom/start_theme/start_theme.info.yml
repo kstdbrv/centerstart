@@ -4,7 +4,7 @@ name: start_theme
 type: theme
 base theme: false
 description: 'template for centerstart website'
-core_version_requirement: ^9
+core_version_requirement: ^8 || ^9
 #package: Core
 
 libraries:
