@@ -46,6 +46,7 @@
         "drupal/devel": "^4.1",
         "drupal/devel_kint_extras": "^1.0",
         "drupal/easy_breadcrumb": "^1.15",
+        "drupal/field_formatter_file_size": "^1.0",
         "drupal/flexslider": "^2.0",
         "drupal/fz152": "^1.8",
         "drupal/imagemagick": "^3.1",
